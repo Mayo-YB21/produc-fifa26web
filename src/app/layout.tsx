@@ -1,33 +1,27 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "./components/Navbar"; //  Importamos el Navbar que creaste
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
+//  Metadata = Título y descripción que verá el navegador
 export const metadata: Metadata = {
-  title: "Fifa Produc 2026 ext App", ///Se cambia el titulo, por el de la pagina
-  description: "Un citio wed de alucion a productos del mundial next app", ////Se cambia la descripcion, por la de la pagina que se esta haciendo.
+  title: "Tienda FIFA 2026",
+  description: "Página escolar inspirada en el Mundial 2026",
 };
 
+//  RootLayout = estructura global de la página
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
-  return (           //Se cambia el lenguaje de ingles "en"a español "es" //Se descubrio un error al cambiar el lenguaje de ingles a español, el error se llama "Error de suppress"
-    <html lang="es"suppressHydrationWarning={true}>  
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+}) {
+  return (
+    <html lang="es">
+      <body className="bg-[#A885F2] text-white">
+        {/* NAVBAR global, aparece en todas las páginas */}
+        <Navbar />
+
+        {/* Aquí se inyecta el contenido de cada página */}
+        <main className="min-h-screen">{children}</main>
       </body>
     </html>
   );

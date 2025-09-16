@@ -1,10 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation"; // 👈 Importamos para saber en qué ruta estamos
+import { usePathname } from "next/navigation"; //  Importamos para saber en qué ruta estamos
 
 export default function Navbar() {
-  const pathname = usePathname(); // 👈 Obtiene la URL actual (ejemplo: "/productos")
+  const pathname = usePathname(); //  Obtiene la URL actual (ejemplo: "/productos")
 
   // Lista de enlaces de navegación
   const links = [
@@ -19,9 +19,14 @@ export default function Navbar() {
 
   return (
     <nav className="bg-[#733CEB] text-white flex items-center justify-between px-8 py-4 shadow-md">
-      {/* LOGO */}
-      {/* Muestra el nombre del proyecto */}
-      <div className="text-2xl font-bold tracking-wide">FIFA 2026</div>
+      {/* LOGO como imagen */}
+    <Link href="/" className="flex items-center gap-2">
+      <img
+        src="/images/logo.png"
+        alt="Logo FIFA 2026"
+        className="h-10 w-auto"
+      />
+    </Link>
 
       {/* LINKS DEL NAVBAR */}
       <div className="hidden md:flex gap-6 text-sm font-medium">
@@ -37,7 +42,7 @@ export default function Navbar() {
                 hover:text-yellow-300 
                 after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-yellow-300 after:left-0 after:-bottom-1 after:transition-all after:duration-200 
                 hover:after:w-full
-                ${isActive ? "text-yellow-300 after:w-full" : ""}`} // 👈 Si es activo, queda resaltado
+                ${isActive ? "text-yellow-300 after:w-full" : ""}`} //  Si es activo, queda resaltado
             >
               {link.name}
             </Link>
