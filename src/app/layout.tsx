@@ -1,14 +1,15 @@
+// src/app/layout.tsx
 import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "./components/Navbar"; //  Importamos el Navbar que creaste
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import AuthWrapper from "./components/AuthWrapper"; // 👈 ahora aquí usamos el wrapper
 
-//  Metadata = Título y descripción que verá el navegador
 export const metadata: Metadata = {
   title: "Tienda FIFA 2026",
   description: "Página escolar inspirada en el Mundial 2026",
 };
 
-//  RootLayout = estructura global de la página
 export default function RootLayout({
   children,
 }: {
@@ -17,12 +18,14 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className="bg-[#A885F2] text-white">
-        {/* NAVBAR global, aparece en todas las páginas */}
-        <Navbar />
-
-        {/* Aquí se inyecta el contenido de cada página */}
-        <main className="min-h-screen">{children}</main>
+        {/* El AuthWrapper maneja redirecciones en cliente */}
+        <AuthWrapper>
+          <Navbar />
+          <main className="min-h-screen">{children}</main>
+          <Footer />
+        </AuthWrapper>
       </body>
     </html>
   );
 }
+
