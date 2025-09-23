@@ -1,4 +1,4 @@
-import { cn } from "@/app/lib/utils"; // ✅ Ruta corregida
+import { cn } from "@/lib/utils";// ✅ Ruta corregida
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: "primary" | "secondary" | "outline";
