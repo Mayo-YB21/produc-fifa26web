@@ -8,7 +8,7 @@ export default function AuthWrapper({ children }: { children: React.ReactNode })
   const pathname = usePathname();
 
   useEffect(() => {
-    // 🚨 Aquí simulamos si el usuario está logueado o no
+    //  Aquí simulamos si el usuario está logueado o no
     const isLoggedIn = false; // <- más adelante puedes cambiarlo por un estado real
 
     // Si NO está logueado y no está en login o register, lo mando al login

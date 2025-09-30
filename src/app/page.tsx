@@ -1,8 +1,8 @@
 import Image from "next/image";
-import Filters from "@/app/components/Filters";
-import SearchBar from "@/app/components/SearchBar";
-import SortControls from "@/app/components/SortControls";
-import ProductCard from "@/app/components/ProductCard";
+import Filters from "@/components/Filters";
+import SearchBar from "@/components/SearchBar";
+import SortControls from "@/components/SortControls";
+import ProductCard from "@/components/ProductCard";
 import { PRODUCTS } from "@/app/data/products";
 import type { Product } from "@/app/types";
 
@@ -37,7 +37,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 💡 SECCIÓN SOLUCIÓN */}
+      {/*  SECCIÓN SOLUCIÓN */}
       <section className="max-w-7xl mx-auto px-6 py-16 text-center">
         <h2 className="text-3xl font-bold mb-6">¿Por qué elegirnos?</h2>
         <p className="max-w-2xl mx-auto text-lg opacity-90">
@@ -47,7 +47,7 @@ export default function Home() {
         </p>
       </section>
 
-      {/* 🤝 SECCIÓN COMUNIDAD */}
+      {/*  SECCIÓN COMUNIDAD */}
       <section className="bg-[#733CEB] py-16 px-6 text-center">
         <h2 className="text-3xl font-bold mb-6">Únete a nuestra comunidad</h2>
         <p className="max-w-2xl mx-auto mb-8 opacity-90">
@@ -61,7 +61,7 @@ export default function Home() {
         </a>
       </section>
 
-      {/* 📚 SECCIÓN RECURSOS */}
+      {/*  SECCIÓN RECURSOS */}
       <section className="max-w-7xl mx-auto px-6 py-16 text-center">
         <h2 className="text-3xl font-bold mb-6">Recursos para fans</h2>
         <p className="max-w-2xl mx-auto opacity-90 mb-8">
@@ -89,7 +89,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 💰 SECCIÓN PRECIOS */}
+      {/*  SECCIÓN PRECIOS */}
       <section className="bg-[#5b2ec7] py-16 px-6 text-center">
         <h2 className="text-3xl font-bold mb-6">Nuestros precios</h2>
         <p className="max-w-2xl mx-auto opacity-90 mb-8">
@@ -103,7 +103,7 @@ export default function Home() {
         </a>
       </section>
 
-      {/* 🛒 SECCIÓN TIENDA */}
+      {/*  SECCIÓN TIENDA */}
       <div id="tienda" className="max-w-7xl mx-auto px-6 py-8">
         <header className="mb-6">
           <h2 className="text-3xl font-bold text-white mb-4">
@@ -132,7 +132,7 @@ export default function Home() {
         </section>
       </div>
 
-      {/* 📞 SECCIÓN CONTACTO */}
+      {/*  SECCIÓN CONTACTO */}
       <section className="bg-[#733CEB] py-16 px-6 text-center">
         <h2 className="text-3xl font-bold mb-6">Contáctanos</h2>
         <p className="max-w-2xl mx-auto mb-6 opacity-90">

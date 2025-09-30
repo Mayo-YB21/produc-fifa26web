@@ -1,9 +1,10 @@
 // src/app/layout.tsx
 import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import AuthWrapper from "./components/AuthWrapper"; // 👈 ahora aquí usamos el wrapper
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import AuthWrapper from "@/components/AuthWrapper";
+
 
 export const metadata: Metadata = {
   title: "Tienda FIFA 2026",

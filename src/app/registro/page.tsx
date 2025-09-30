@@ -1,7 +1,6 @@
 "use client";
-
 import { useState } from "react";
-import Input from "@/app/components/ui/Input";
+import Input from "@/components/ui/Input";
 
 export default function RegisterPage() {
   const [formData, setFormData] = useState({
