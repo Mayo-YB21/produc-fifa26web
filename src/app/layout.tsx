@@ -1,14 +1,13 @@
-// src/app/layout.tsx
 import type { Metadata } from "next";
 import "./globals.css";
+
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AuthWrapper from "@/components/AuthWrapper";
 
-
 export const metadata: Metadata = {
-  title: "Tienda FIFA 2026",
-  description: "Página escolar inspirada en el Mundial 2026",
+  title: "Tu Proyecto",
+  description: "Plataforma web desarrollada en Next.js",
 };
 
 export default function RootLayout({
@@ -18,15 +17,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className="bg-[#A885F2] text-white">
-        {/* El AuthWrapper maneja redirecciones en cliente */}
+      <body className="min-h-screen flex flex-col bg-gray-50 text-gray-900">
         <AuthWrapper>
           <Navbar />
-          <main className="min-h-screen">{children}</main>
+          <main className="flex-1">{children}</main>
           <Footer />
         </AuthWrapper>
       </body>
     </html>
   );
 }
+
 

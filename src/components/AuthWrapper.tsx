@@ -1,21 +1,36 @@
-"use client"; // 👈 obligatorio porque usará hooks
+"use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 
-export default function AuthWrapper({ children }: { children: React.ReactNode }) {
+export default function AuthWrapper({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const router = useRouter();
   const pathname = usePathname();
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    //  Aquí simulamos si el usuario está logueado o no
-    const isLoggedIn = false; // <- más adelante puedes cambiarlo por un estado real
+    // 👇 Evita errores de renderizado en servidor
+    setIsClient(true);
+  }, []);
 
-    // Si NO está logueado y no está en login o register, lo mando al login
-    if (!isLoggedIn && pathname !== "/login" && pathname !== "/register") {
+  useEffect(() => {
+    if (!isClient) return;
+
+    // ⚙️ Simulación de autenticación
+    const isLoggedIn = false; // luego puedes reemplazarlo con lógica real
+
+    // 🚫 Redirige si no está logueado y trata de acceder a rutas protegidas
+    if (!isLoggedIn && pathname !== "/login" && pathname !== "/registro") {
       router.push("/login");
     }
-  }, [pathname, router]);
+  }, [isClient, pathname, router]);
 
-  return <>{children}</>; // devuelve el contenido normal
+  // Evita renderizar en el servidor
+  if (!isClient) return null;
+
+  return <>{children}</>;
 }

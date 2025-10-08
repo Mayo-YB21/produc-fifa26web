@@ -1,4 +1,5 @@
 "use client";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -8,7 +9,9 @@ export default function Navbar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
+  // Rutas actualizadas
   const links = [
+    { name: "Inicio", href: "/" },
     { name: "Productos", href: "/#tienda" },
     { name: "Solución", href: "/solucion" },
     { name: "Comunidad", href: "/comunidad" },
@@ -26,18 +29,18 @@ export default function Navbar() {
         <Link href="/" className="flex items-center gap-2">
           <img
             src="/images/logo.png"
-            alt="Logo Tienda Mundial"
+            alt="Logo del Proyecto"
             className="h-10 w-auto"
           />
         </Link>
 
-        {/* LINKS DESKTOP */}
+        {/* LINKS EN DESKTOP */}
         <div className="hidden md:flex gap-6 text-sm font-medium">
-          {links.map((link, i) => {
+          {links.map((link) => {
             const isActive = pathname === link.href;
             return (
               <Link
-                key={i}
+                key={link.href}
                 href={link.href}
                 className={`relative transition-all duration-200 hover:text-yellow-300
                   after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-yellow-300 after:left-0 after:-bottom-1 after:transition-all after:duration-200 hover:after:w-full
@@ -49,28 +52,29 @@ export default function Navbar() {
           })}
         </div>
 
-        {/* BOTÓN MENÚ MÓVIL */}
+        {/* BOTÓN DE MENÚ EN MÓVIL */}
         <button
           className="md:hidden p-2 rounded-lg hover:bg-purple-600 transition"
           onClick={() => setIsOpen(!isOpen)}
+          aria-label="Abrir o cerrar menú"
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* MENÚ DESPLEGABLE EN MÓVIL */}
+      {/* MENÚ MÓVIL */}
       {isOpen && (
         <div className="md:hidden bg-[#733CEB] border-t border-purple-700">
           <div className="flex flex-col px-6 py-4 gap-4">
-            {links.map((link, i) => {
+            {links.map((link) => {
               const isActive = pathname === link.href;
               return (
                 <Link
-                  key={i}
+                  key={link.href}
                   href={link.href}
                   className={`block transition-all duration-200 hover:text-yellow-300
                     ${isActive ? "text-yellow-300 font-semibold" : ""}`}
-                  onClick={() => setIsOpen(false)} // cerrar menú al hacer clic
+                  onClick={() => setIsOpen(false)}
                 >
                   {link.name}
                 </Link>

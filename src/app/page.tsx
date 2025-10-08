@@ -6,17 +6,20 @@ import ProductCard from "@/components/ProductCard";
 import { PRODUCTS } from "@/app/data/products";
 import type { Product } from "@/app/types";
 
-export default function Home() {
+export default function HomePage() {
+  const products: Product[] = PRODUCTS;
+
   return (
     <main className="min-h-screen bg-[#A885F2]">
-      
+      {/* HERO */}
       <section className="bg-gradient-to-r from-[#733CEB] to-[#A885F2] text-white flex flex-col md:flex-row items-center justify-between px-8 md:px-16 py-16 gap-8">
         <div className="max-w-xl text-center md:text-left">
           <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
             ¡Prepárate para el Mundial 2026!
           </h1>
           <p className="mt-4 text-lg opacity-90">
-            Camisetas, balones y recuerdos exclusivos para celebrar el evento de fútbol más grande del mundo.
+            Camisetas, balones y recuerdos exclusivos para celebrar el evento de
+            fútbol más grande del mundo.
           </p>
           <a
             href="#tienda"
@@ -37,7 +40,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/*  SECCIÓN SOLUCIÓN */}
+      {/* SECCIÓN SOLUCIÓN */}
       <section className="max-w-7xl mx-auto px-6 py-16 text-center">
         <h2 className="text-3xl font-bold mb-6">¿Por qué elegirnos?</h2>
         <p className="max-w-2xl mx-auto text-lg opacity-90">
@@ -47,11 +50,12 @@ export default function Home() {
         </p>
       </section>
 
-      {/*  SECCIÓN COMUNIDAD */}
-      <section className="bg-[#733CEB] py-16 px-6 text-center">
+      {/* SECCIÓN COMUNIDAD */}
+      <section className="bg-[#733CEB] py-16 px-6 text-center text-white">
         <h2 className="text-3xl font-bold mb-6">Únete a nuestra comunidad</h2>
         <p className="max-w-2xl mx-auto mb-8 opacity-90">
-          Miles de aficionados ya forman parte de nuestra comunidad. ¡No te quedes fuera!
+          Miles de aficionados ya forman parte de nuestra comunidad. ¡No te
+          quedes fuera!
         </p>
         <a
           href="#registro"
@@ -61,11 +65,12 @@ export default function Home() {
         </a>
       </section>
 
-      {/*  SECCIÓN RECURSOS */}
-      <section className="max-w-7xl mx-auto px-6 py-16 text-center">
+      {/* SECCIÓN RECURSOS */}
+      <section className="max-w-7xl mx-auto px-6 py-16 text-center text-white">
         <h2 className="text-3xl font-bold mb-6">Recursos para fans</h2>
         <p className="max-w-2xl mx-auto opacity-90 mb-8">
-          Encuentra artículos, estadísticas y curiosidades para disfrutar al máximo el Mundial.
+          Encuentra artículos, estadísticas y curiosidades para disfrutar al
+          máximo el Mundial.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-white/10 p-6 rounded-2xl shadow">
@@ -89,8 +94,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/*  SECCIÓN PRECIOS */}
-      <section className="bg-[#5b2ec7] py-16 px-6 text-center">
+      {/* SECCIÓN PRECIOS */}
+      <section className="bg-[#5b2ec7] py-16 px-6 text-center text-white">
         <h2 className="text-3xl font-bold mb-6">Nuestros precios</h2>
         <p className="max-w-2xl mx-auto opacity-90 mb-8">
           Productos de calidad a precios accesibles para todos los fans.
@@ -103,7 +108,7 @@ export default function Home() {
         </a>
       </section>
 
-      {/*  SECCIÓN TIENDA */}
+      {/* SECCIÓN TIENDA */}
       <div id="tienda" className="max-w-7xl mx-auto px-6 py-8">
         <header className="mb-6">
           <h2 className="text-3xl font-bold text-white mb-4">
@@ -124,7 +129,7 @@ export default function Home() {
 
           <div className="flex-1">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {PRODUCTS.map((p: Product) => (
+              {products.map((p) => (
                 <ProductCard key={p.id} product={p} />
               ))}
             </div>
@@ -132,8 +137,8 @@ export default function Home() {
         </section>
       </div>
 
-      {/*  SECCIÓN CONTACTO */}
-      <section className="bg-[#733CEB] py-16 px-6 text-center">
+      {/* SECCIÓN CONTACTO */}
+      <section className="bg-[#733CEB] py-16 px-6 text-center text-white">
         <h2 className="text-3xl font-bold mb-6">Contáctanos</h2>
         <p className="max-w-2xl mx-auto mb-6 opacity-90">
           ¿Tienes dudas o sugerencias? Escríbenos, queremos escucharte.
