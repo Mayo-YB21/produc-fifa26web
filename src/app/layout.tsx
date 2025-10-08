@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import AuthWrapper from "@/components/AuthWrapper";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import AuthWrapper from "../components/AuthWrapper";
 
 export const metadata: Metadata = {
   title: "Tu Proyecto",

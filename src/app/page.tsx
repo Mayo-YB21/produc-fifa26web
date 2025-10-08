@@ -1,10 +1,10 @@
 import Image from "next/image";
-import Filters from "@/components/Filters";
-import SearchBar from "@/components/SearchBar";
-import SortControls from "@/components/SortControls";
-import ProductCard from "@/components/ProductCard";
-import { PRODUCTS } from "@/app/data/products";
-import type { Product } from "@/app/types";
+import Filters from "../components/Filters";
+import SearchBar from "../components/SearchBar";
+import SortControls from "../components/SortControls";
+import ProductCard from "../components/ProductCard";
+import { PRODUCTS } from "../app/data/products";
+import type { Product } from "../app/types";
 
 export default function HomePage() {
   const products: Product[] = PRODUCTS;

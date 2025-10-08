@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Input from "@/components/ui/Input";
+// Update the import path if Input is located elsewhere, for example:
+import { Input } from "../../components/ui/Input";
 
 export default function RegisterPage() {
   const [formData, setFormData] = useState({
