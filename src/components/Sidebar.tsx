@@ -1,2 +1,2 @@
-import Filters from "@/components/Filters";
-import SortControls from "@/components/SortControls";
+import Filters from "../components/Filters";
+import SortControls from "../components/SortControls";

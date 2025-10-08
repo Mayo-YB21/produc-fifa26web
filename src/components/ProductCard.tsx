@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import type { Product } from "@/app/types";; // ajusta si tu path de types es otro
+import type { Product } from "../app/types";; // ajusta si tu path de types es otro
 
 type Props = {
   product: Product;
